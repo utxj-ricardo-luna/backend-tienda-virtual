@@ -16,3 +16,5 @@ build/
 .vscode/
 .DS_Store
 Thumbs.db
+
+sequelize model:create --name tbc_usuarios --attributes nombre:string,direccion:string,telefono:string,email:string,password:string,rol:string,fecha_registro:string
