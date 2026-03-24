@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('tbb_carritos', {
+    await queryInterface.createTable('tbb_carrito', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,7 +11,11 @@ module.exports = {
       },
       id_usuario: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model: 'tbc_usuario',
+          key: 'id'
+        },
       },
        total: {
         allowNull:false,
@@ -37,6 +41,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('tbb_carritos');
+    await queryInterface.dropTable('tbb_carrito');
   }
 };

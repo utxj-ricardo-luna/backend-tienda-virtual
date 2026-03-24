@@ -3,9 +3,9 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class tbc_usuarios extends Model {
+  class tbc_usuario extends Model {
     /**
-     * Helper method for defining associations.
+     * Helper method fdefining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  tbc_usuarios.init({
+  tbc_usuario.init({
     nombre:{
       type:DataTypes.STRING(100),
       allowNull:false
@@ -45,14 +45,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'tbc_usuarios',
+    modelName: 'tbc_usuario',
   });
-
-  tbc_usuarios.associate = (models) => {
-    tbc_usuarios.hasMany(models.tbb_carrito, {
+//--------------------------------------------
+  tbc_usuario.associate = (models) => {
+    tbc_usuario.hasMany(models.tbb_carrito, {
       foreignKey: 'id_usuario',
       as:'tbb_carrito'
     })
   };
-  return tbc_usuarios;
+//---------------------------------------------
+  return tbc_usuario;
 };
