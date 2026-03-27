@@ -1,6 +1,6 @@
-require('dotenv').config()
-
+require('dotenv').config();
 const express = require('express');
+
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 //Tipo de servidor que realizaremos
@@ -16,6 +16,9 @@ app.use(bodyParser.urlencoded({ extended:false}));
 app.get('/', (req, res) => res.status(200).send({
      message: 'Bienvenido a la API de ventas.',
 }));
+//creando rutas
+require('./routes/route_categoria')(app); 
+
 //Configurar puerto del servidor
 const port = parseInt(process.env.PORT, 10) || 8000;
 app.set('port', port);
