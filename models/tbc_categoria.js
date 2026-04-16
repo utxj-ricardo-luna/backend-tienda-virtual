@@ -21,6 +21,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'tbc_categoria',
+    tableName: 'tbc_categoria', // <--- AGREGA ESTO (Asegúrate que coincida con tu DB)
+    freezeTableName: true      // <--- AGREGA ESTO para evitar plurales
   });
   //--------------------------------------------
   tbc_categoria.associate = (models) => {

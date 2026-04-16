@@ -33,6 +33,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'tbd_carrito_detalle',
+    tableName: 'tbd_carrito_detalle', // <--- AGREGA ESTO (Asegúrate que coincida con tu DB)
+    freezeTableName: true      // <--- AGREGA ESTO para evitar plurales
   });
     //----------------------------------------------
   tbd_carrito_detalle.associate = (models) => {

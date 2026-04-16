@@ -17,7 +17,11 @@ app.get('/', (req, res) => res.status(200).send({
      message: 'Bienvenido a la API de ventas.',
 }));
 //creando rutas
-require('./routes/route_categoria')(app); 
+require('./routes/route_categoria')(app);
+require('./routes/route_producto')(app); 
+require('./routes/route_usuario')(app); 
+require('./routes/route_carrito')(app); 
+require('./routes/route_carrito_detalle')(app); 
 
 //Configurar puerto del servidor
 const port = parseInt(process.env.PORT, 10) || 8000;
