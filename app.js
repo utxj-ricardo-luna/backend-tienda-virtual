@@ -1,12 +1,18 @@
 require('dotenv').config();
 const express = require('express');
-
+const cors = require('cors');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 //Tipo de servidor que realizaremos
 const http = require('http');
 //Iniciar y configurar express
 const app = express();
+app.use(cors({
+  origin: 'http://localhost:5173', // El puerto donde corre tu Frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+app.use(express.json()); 
 //Log mostrar informacion en consola
 app.use(logger('dev'));
 //Parsear las entradas de solicitud de datos

@@ -46,8 +46,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'tbc_usuario',
-    tableName: 'tbc_usuario', // <--- AGREGA ESTO (Asegúrate que coincida con tu DB)
-    freezeTableName: true      // <--- AGREGA ESTO para evitar plurales
+    tableName: 'tbc_usuario',
+    freezeTableName: true
   });
 //--------------------------------------------
   tbc_usuario.associate = (models) => {
